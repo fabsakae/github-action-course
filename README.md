@@ -75,5 +75,3 @@ Clique no botão "Run workflow" no lado direito da tela, ao lado da mensagem "Th
 
 
 Após explorar as diferentes maneiras de acionar um workflow, reduza a lista de gatilhos para deixar apenas workflow_dispatch para evitar que este workflow seja executado a cada push e polua a lista de execuções de workflow.
-
-
