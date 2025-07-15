@@ -1,79 +1,79 @@
 # github-action-course
 Repositório contendo exemplos para o GitHub action course
 
+Exercício Prático 01 - Criando Nosso Primeiro Workflow
+Descrição do Exercício
+Neste exercício prático, nosso objetivo é criar nosso primeiro workflow.
+Aqui estão as instruções para o exercício:
 
-###ractical Exercise 01 - Creating Our First Workflow###
-Exercise Description
-In this practical exercise, our goal is to create our first workflow.
+Crie um arquivo chamado 01-building-blocks.yaml na pasta .github/workflows na raiz do seu repositório.
 
-Here are the instructions for the exercise:
+Nomeie o workflow como 01 - Building Blocks.
 
-Create a file named 01-building-blocks.yaml under the .github/workflows folder in the root of your repository.
-
-Name the workflow 01 - Building Blocks.
-
-Add the following triggers to your workflow:
+Adicione os seguintes gatilhos ao seu workflow:
 
 push
-
 workflow_dispatch
 
-Add two jobs to the workflow:
 
-The first job, echo-hello, should run on ubuntu-latest and have a single step, named Say hello, which simply prints the "Hello, World!" message on the screen.
+Adicione dois jobs ao workflow:
 
-The second job, echo-goodbye, should also run on ubuntu-latest and have two steps:
+O primeiro job, echo-hello, deve ser executado em ubuntu-latest e ter um único passo, chamado Say hello, que simplesmente imprime a mensagem "Hello, World!" na tela.
+O segundo job, echo-goodbye, também deve ser executado em ubuntu-latest e ter dois passos:
+O primeiro passo, chamado Failed step, deve executar um script bash de várias linhas que imprime "I will fail" na tela e termina com qualquer código diferente de zero.
+O segundo passo, chamado Say goodbye, deve simplesmente imprimir "Goodbye!" na tela.
 
-The first step, named Failed step, should run a multi-line bash script which prints "I will fail" on the screen and exits with any non-zero code.
 
-The second step, named Say goodbye, should simply print "Goodbye!" on the screen.
 
-Take some time to play around and inspect what happens once a step fails during the workflow execution.
 
-As a last step, change the first step of the second job to exit with a zero code. You can also adjust the name of the step and the printed message to match the new state.
+Dedique algum tempo para experimentar e inspecionar o que acontece quando um passo falha durante a execução do workflow.
 
-Have a look at how this impacts the workflow execution.
+Como último passo, altere o primeiro passo do segundo job para terminar com um código zero. Você também pode ajustar o nome do passo e a mensagem impressa para corresponder ao novo estado.
 
-Change the workflow triggers to contain only workflow_dispatch to prevent this workflow from running with every push and pollute the list of workflow runs.
+Observe como isso impacta a execução do workflow.
 
-###Practical Exercise 02 - Using Different Events to Trigger Workflows###
-Exercise Description
-In this practical exercise, our goal is to explore the different ways we can trigger workflows in GitHub Actions.
+Altere os gatilhos do workflow para conter apenas workflow_dispatch para evitar que este workflow seja executado a cada push e polua a lista de execuções de workflow.
 
-Here are the instructions for the exercise:
 
-Create a file named 02-workflow-events.yaml under the .github/workflows folder in the root of your repository.
+Exercício Prático 02 - Usando Diferentes Eventos para Acionar Workflows
+Descrição do Exercício
+Neste exercício prático, nosso objetivo é explorar as diferentes maneiras de acionar workflows no GitHub Actions.
+Aqui estão as instruções para o exercício:
 
-Name the workflow 02 - Workflow Events.
+Crie um arquivo chamado 02-workflow-events.yaml na pasta .github/workflows na raiz do seu repositório.
 
-Add the following triggers to your workflow:
+Nomeie o workflow como 02 - Workflow Events.
+
+Adicione o seguinte gatilho ao seu workflow:
 
 push
 
-Add a single job to the workflow:
 
-The job, named echo, should run on ubuntu-latest and contain a single step, named Show the trigger, which prints the type of the name of the event that triggered the workflow.
+Adicione um único job ao workflow:
 
-Commit the changes and push the code. Take some time to inspect the output of the workflow run.
+O job, chamado echo, deve ser executado em ubuntu-latest e conter um único passo, chamado Show the trigger, que imprime o tipo do nome do evento que acionou o workflow.
 
-Now add more triggers to the workflow:
+
+Faça o commit das alterações e envie o código. Dedique algum tempo para inspecionar a saída da execução do workflow.
+
+Agora, adicione mais gatilhos ao workflow:
 
 pull_request
-
-schedule (cron expression)
-
+schedule (expressão cron)
 workflow_dispatch
 
-Commit the changes and push the code. Take some time to inspect the different ways the workflow is triggered.
 
-You can create a pull request on GitHub to see how this changes the output of the workflow run.
+Faça o commit das alterações e envie o código. Dedique algum tempo para inspecionar as diferentes maneiras como o workflow é acionado.
 
-Also give it a try to trigger it from the UI. To do so:
+Você pode criar um pull request no GitHub para ver como isso altera a saída da execução do workflow.
 
-Click under the "Actions" tab in the home page of the repository.
+Experimente também acionar o workflow pela interface do usuário. Para fazer isso:
 
-Select the workflow named 02 - Workflow Events on the left of the screen.
+Clique na aba "Actions" na página inicial do repositório.
+Selecione o workflow chamado 02 - Workflow Events no lado esquerdo da tela.
+Clique no botão "Run workflow" no lado direito da tela, ao lado da mensagem "This workflow has a workflow_dispatch event trigger."
 
-Click on the "Run workflow" button on the right side of the screen, next to the message "This workflow has a workflow_dispatch event trigger."
 
-After exploring the different ways to trigger a workflow, reduce the list of triggers to leave only workflow_dispatch to prevent this workflow from running with every push and pollute the list of workflow runs.
+Após explorar as diferentes maneiras de acionar um workflow, reduza a lista de gatilhos para deixar apenas workflow_dispatch para evitar que este workflow seja executado a cada push e polua a lista de execuções de workflow.
+
+
