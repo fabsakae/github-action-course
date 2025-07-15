@@ -99,3 +99,28 @@ Clique no botão "Run workflow" (Executar workflow) no lado direito da tela, ao 
 Finalização dos Triggers:
 
 Após explorar as diferentes formas de acionar um workflow, reduza a lista de gatilhos para deixar apenas workflow_dispatch para evitar que este workflow seja executado a cada push e polua a lista de execuções do workflow.
+Practical Exercise 03 - Working with Windows and Ubuntu Runners
+
+Exercise Description
+
+In this practical exercise, our goal is to explore different possibilities for setting runners for our workflows.
+
+Here are the instructions for the exercise:
+
+Create a file named 03-workflow-runners.yaml under the .github/workflows folder in the root of your repository.
+
+Name the workflow 03 - Workflow Runners.
+
+Add the following triggers to your workflow:
+
+push
+
+Add three jobs to the workflow:
+
+The first job, ubuntu-echo, should run on ubuntu-latest and have a single step, named Show OS, which runs a multi-line bash script printing "This job is running on an Ubuntu runner.", and then the runner OS on the next line.
+
+The second job, windows-echo, should run on windows-latest and have a single step, named Show OS, which runs a multi-line bash script printing "This job is running on a Windows runner.", and then the runner OS on the next line.
+
+The third job, mac-echo, should run on macos-latest and have a single step, named Show OS, which runs a multi-line bash script printing "This job is running on a MacOS runner.", and then the runner OS on the next line.
+
+Change the workflow triggers to contain only workflow_dispatch to prevent this workflow from running with every push and pollute the list of workflow runs.

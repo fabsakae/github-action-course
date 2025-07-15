@@ -1,0 +1,11 @@
+name: 03 - workflow runners
+
+on: push
+
+jobs:
+    ubuntu-echo:
+        runs-on: ubuntu-latest
+        steps:
+          - name: Show OS 
+            shell: bash 
+            run: echo "I'm running on bash."
