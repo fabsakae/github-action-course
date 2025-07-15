@@ -1,10 +1,10 @@
 # github-action-course
 Repositório contendo exemplos para o GitHub action course
-Exercício Prático 01 - Criando Nosso Primeiro Workflow
+##Exercício Prático 01 - Criando Nosso Primeiro Workflow##
 Descrição do Exercício
 Neste exercício prático, nosso objetivo é criar nosso primeiro workflow.
 
-Instruções para o Exercício
+###Instruções para o Exercício###
 Crie um arquivo chamado 01-building-blocks.yaml dentro da pasta .github/workflows na raiz do seu repositório.
 
 Nomeie o workflow como 01 - Building Blocks.
