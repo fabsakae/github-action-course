@@ -4,17 +4,17 @@ Repositório contendo exemplos para o GitHub action course
 * Descrição do Exercício: Neste exercício prático, nosso objetivo é criar nosso primeiro workflow.
 
 ## Instruções para o Exercício
-* Crie um arquivo chamado `01-building-blocks.yaml` dentro da pasta `.github/workflows` na raiz do seu repositório.
+ Crie um arquivo chamado `01-building-blocks.yaml` dentro da pasta `.github/workflows` na raiz do seu repositório.
 
-* Nomeie o workflow como 01 - Building Blocks.
+ Nomeie o workflow como 01 - Building Blocks.
 
-* Adicione os seguintes "triggers" (gatilhos) ao seu workflow:
+Adicione os seguintes "triggers" (gatilhos) ao seu workflow:
 
 `push`
 
 `workflow_dispatch`
 
-* Adicione dois "jobs" (tarefas) ao workflow:
+ Adicione dois "jobs" (tarefas) ao workflow:
 
 `Primeiro job: echo-hello`
 
