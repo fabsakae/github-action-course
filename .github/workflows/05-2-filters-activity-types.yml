@@ -1,0 +1,14 @@
+name: 05 - 2 - Events filters and Activity Types
+
+on: 
+  pull_request:
+    types:
+      - closed
+    branches:
+      - main
+
+jobs:
+    echo:
+        runs-on: ubuntu-latest       
+        steps:
+          - run: echo "Running wherever a PR is closed"
