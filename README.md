@@ -28,9 +28,9 @@ Também deve rodar em ubuntu-latest.
 
 Deve ter dois steps:
 
-*Primeiro step: Chamado Failed step, deve executar um script bash multi-linha que imprime "I will fail" na tela e sai com qualquer código diferente de zero (ex: exit 1).
+Primeiro step: Chamado Failed step, deve executar um script bash multi-linha que imprime "I will fail" na tela e sai com qualquer código diferente de zero (ex: exit 1).
 
-*Segundo step: Chamado Say goodbye, deve simplesmente imprimir "Goodbye!" na tela.
+Segundo step: Chamado Say goodbye, deve simplesmente imprimir "Goodbye!" na tela.
 
 **Observe o Comportamento:** Dedique um tempo para observar e inspecionar o que acontece quando um step falha durante a execução do workflow.
 
