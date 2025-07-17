@@ -127,7 +127,7 @@ Neste exercício prático, nosso objetivo é explorar como podemos usar ações 
 
 Para isso, utilizaremos uma aplicação React que será gerada com a ajuda da ferramenta create-react-app. Consulte a seção de dicas para o comando específico para gerar sua aplicação React. Aqui estão as instruções para o exercício:
 
-Gerar uma Aplicação React:
+## Gerar uma Aplicação React:
 Crie uma nova pasta chamada 04-using-actions na raiz do repositório.
 
 Usando um terminal, navegue até este diretório (cd) e gere uma aplicação React dentro de um diretório react-app. Você pode criar o diretório manualmente ou deixar que a ferramenta create-react-app faça isso por você.
@@ -136,14 +136,14 @@ Assim que a configuração do React estiver concluída, você deverá ver uma me
 
 Dedique alguns momentos para inspecionar os arquivos e se familiarizar com a estrutura de pastas da aplicação.
 
-Criar a Primeira Versão do Workflow:
+**Criar a Primeira Versão do Workflow:**
 Crie um arquivo chamado 04-using-actions.yaml dentro da pasta .github/workflows na raiz do seu repositório.
 
 Nomeie o workflow como 04 - Using Actions.
 
 Adicione os seguintes gatilhos (triggers) ao seu workflow:
 
-push
+`push`
 
 Adicione um único job (tarefa) chamado build ao workflow. O job deve conter dois passos (steps):
 
@@ -155,7 +155,7 @@ Faça o commit das alterações e envie o código (push).
 
 Dedique alguns momentos para inspecionar a saída da execução do workflow.
 
-Estender o Workflow para Configurar o Node e Instalar as Dependências da Aplicação React:
+**Estender o Workflow para Configurar o Node e Instalar as Dependências da Aplicação React:**
 Remova o passo Printing Folders.
 
 Adicione um novo passo após o passo Checkout Code. Este novo passo deve ser nomeado Setup Node e configurar o Node usando a versão 20.x.
@@ -164,16 +164,50 @@ Adicione um novo passo após o passo Setup Node. Este novo passo deve ser nomead
 
 Faça o commit das alterações e envie o código (push).
 
-Dedique alguns momentos para inspecionar a saída da execução do workflow.
-
-Estender o Workflow para Executar os Testes Automatizados da Aplicação React:
+**Estender o Workflow para Executar os Testes Automatizados da Aplicação React:**
 Adicione um novo passo após o passo Install Dependencies. Este novo passo deve ser nomeado Run Unit Tests e deve executar os testes automatizados rodando o comando npm run test dentro da pasta da aplicação React. Você pode tanto navegar (cd) para o diretório antes de executar o comando npm run test, ou pode passar o diretório de trabalho adicionando a opção working-directory: 04-using-actions/react-app ao passo (como uma chave irmã de name e run).
 
 Faça o commit das alterações e envie o código (push).
 
-Dedique alguns momentos para inspecionar a saída da execução do workflow.
-
-Finalizando:
+**Finalizando:**
 Altere os gatilhos do workflow para conter apenas workflow_dispatch para evitar que este workflow seja executado a cada push e polua a lista de execuções do workflow.
+
+---
+### Exercício Prático 05 - Usando Filtros e Tipos de Atividade
+
+## Descrição do Exercício
+Neste exercício prático, nosso objetivo é explorar as diferentes maneiras de usar filtros de eventos e tipos de atividade para direcionar melhor quando os workflows (fluxos de trabalho) são executados.
+
+* Criaremos dois workflows para este exercício prático. Aqui estão as instruções:
+
+**Criando Nosso Primeiro Workflow:** Crie um arquivo chamado 05-1-filters-activity-types.yaml dentro da pasta .github/workflows na raiz do seu repositório.
+
+Nomeie o workflow como 05 - 1 - Event Filters and Activity Types.
+
+Adicione os seguintes gatilhos (triggers) com filtros de eventos e tipos de atividade ao seu workflow:
+
+pull_request: use tipos de atividade para restringir as execuções apenas a opened (aberto) e synchronize (sincronizar). Além disso, use filtros de evento para restringir as execuções deste workflow a serem acionadas apenas por alterações na branch main.
+
+Adicione um único job (tarefa) chamado echo ao workflow. O job deve conter um único passo (step), que simplesmente imprime a seguinte mensagem na tela: Running whenever a PR is opened or synchronized AND base branch is main. (Executando sempre que um PR é aberto ou sincronizado E a branch base é main.)
+
+Faça o commit das alterações e envie o código (push).
+
+Edite o arquivo README.md na raiz do repositório com as alterações que desejar e faça o commit das alterações para uma nova branch chamada pr-test-1 (na interface do usuário, esta opção está na parte inferior da janela que aparece quando você deseja salvar as alterações).
+
+Crie um pull request de pr-test-1 para a branch main e dedique alguns momentos para inspecionar a saída da execução do workflow acionado.
+
+**Criando Nosso Segundo Workflow:** Crie um arquivo chamado 05-2-filters-activity-types.yaml dentro da pasta .github/workflows na raiz do seu repositório.
+
+Nomeie o workflow como 05 - 2 - Event Filters and Activity Types.
+
+Adicione os seguintes gatilhos (triggers) com filtros de eventos e tipos de atividade ao seu workflow:
+
+pull_request: use tipos de atividade para restringir as execuções apenas a closed (fechado). Além disso, use filtros de evento para restringir as execuções deste workflow a serem acionadas apenas por alterações na branch main.
+
+Adicione um único job (tarefa) chamado echo ao workflow. O job deve conter um único passo (step), que simplesmente imprime a seguinte mensagem na tela: Running whenever a PR is closed. (Executando sempre que um PR é fechado.)
+
+Faça o commit das alterações e envie o código (push).
+
+**Finalizando:** Altere os gatilhos de ambos os workflows para conter apenas `workflow_dispatch` para evitar que eles sejam executados a cada push e poluam a lista de execuções do workflow.
 
 ---
