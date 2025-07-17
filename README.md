@@ -149,7 +149,7 @@ Adicione um único job (tarefa) chamado build ao workflow. O job deve conter doi
 
 O primeiro, nomeado Checkout Code, deve fazer o checkout do código do repositório para o diretório de trabalho atual.
 
-O segundo, nomeado Printing Folders, deve simplesmente imprimir a estrutura de pastas após o comando de checkout.
+O segundo, nomeado Printing Folders, deve simplesmente imprimir a estrutura de pastas após o comando de checkout. (Para rodar comandos shell (como ls, npm install, etc.), você deve usar a palavra-chave run:.)
 
 Faça o commit das alterações e envie o código (push).
 
