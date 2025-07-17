@@ -4,7 +4,7 @@ on:
   pull_requests:
     types:
       - opened
-      - syncronize
+      - synchronize
     branches:
       - main
 
@@ -12,4 +12,4 @@ jobs:
     echo:
         runs-on: ubuntu-latest       
         steps:
-          - run: echo "Running wherever a PR is opened or syncronized AND base branch is main"
+          - run: echo "Running wherever a PR is opened or synchronized AND base branch is main"
