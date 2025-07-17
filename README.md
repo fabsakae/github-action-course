@@ -43,18 +43,19 @@ Observe como essa alteração impacta a execução do workflow.
 ---
 
 ### Exercício Prático 02 - Usando Diferentes Eventos para Acionar Workflows
-* Descrição do Exercício: Neste exercício prático, nosso objetivo é explorar as diferentes maneiras pelas quais podemos acionar workflows no GitHub Actions.
+
+**Descrição do Exercício**:  Neste exercício prático, nosso objetivo é explorar as diferentes maneiras pelas quais podemos acionar workflows no GitHub Actions.
 
 ## Instruções para o Exercício:
-* Crie um arquivo chamado `02-workflow-events.yaml` dentro da pasta `.github/`workflows na raiz do seu repositório.
+ Crie um arquivo chamado `02-workflow-events.yaml` dentro da pasta `.github/`workflows na raiz do seu repositório.
 
-* Nomeie o workflow como 02 - Workflow Events.
+Nomeie o workflow como 02 - Workflow Events.
 
-*Adicione o seguinte "trigger" (gatilho) ao seu workflow:
+Adicione o seguinte "trigger" (gatilho) ao seu workflow:
 
 `push`
 
-* Adicione um único "job" (tarefa) ao workflow:
+Adicione um único "job" (tarefa) ao workflow:
 
 O job, nomeado echo, deve rodar em `ubuntu-latest`.
 
