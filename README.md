@@ -120,3 +120,60 @@ O terceiro job, mac-echo, deve ser executado no `macos-latest`. Terá um único 
 Altere os gatilhos do workflow de `push` para conter apenas `workflow_dispatch` para evitar que este workflow seja executado a cada push e polua a lista de execuções do workflow.
 
 ---
+### Exercício Prático 04 - Trabalhando com Ações Personalizadas de Terceiros
+## Descrição do Exercício:
+
+Neste exercício prático, nosso objetivo é explorar como podemos usar ações personalizadas de terceiros para realizar tarefas sem ter que defini-las do zero.
+
+Para isso, utilizaremos uma aplicação React que será gerada com a ajuda da ferramenta create-react-app. Consulte a seção de dicas para o comando específico para gerar sua aplicação React. Aqui estão as instruções para o exercício:
+
+Gerar uma Aplicação React:
+Crie uma nova pasta chamada 04-using-actions na raiz do repositório.
+
+Usando um terminal, navegue até este diretório (cd) e gere uma aplicação React dentro de um diretório react-app. Você pode criar o diretório manualmente ou deixar que a ferramenta create-react-app faça isso por você.
+
+Assim que a configuração do React estiver concluída, você deverá ver uma mensagem de sucesso.
+
+Dedique alguns momentos para inspecionar os arquivos e se familiarizar com a estrutura de pastas da aplicação.
+
+Criar a Primeira Versão do Workflow:
+Crie um arquivo chamado 04-using-actions.yaml dentro da pasta .github/workflows na raiz do seu repositório.
+
+Nomeie o workflow como 04 - Using Actions.
+
+Adicione os seguintes gatilhos (triggers) ao seu workflow:
+
+push
+
+Adicione um único job (tarefa) chamado build ao workflow. O job deve conter dois passos (steps):
+
+O primeiro, nomeado Checkout Code, deve fazer o checkout do código do repositório para o diretório de trabalho atual.
+
+O segundo, nomeado Printing Folders, deve simplesmente imprimir a estrutura de pastas após o comando de checkout.
+
+Faça o commit das alterações e envie o código (push).
+
+Dedique alguns momentos para inspecionar a saída da execução do workflow.
+
+Estender o Workflow para Configurar o Node e Instalar as Dependências da Aplicação React:
+Remova o passo Printing Folders.
+
+Adicione um novo passo após o passo Checkout Code. Este novo passo deve ser nomeado Setup Node e configurar o Node usando a versão 20.x.
+
+Adicione um novo passo após o passo Setup Node. Este novo passo deve ser nomeado Install Dependencies e instalar as dependências da nossa aplicação React executando o comando npm ci dentro da pasta da aplicação React. Você pode tanto navegar (cd) para o diretório antes de executar o comando npm ci, ou pode passar o diretório de trabalho adicionando a opção working-directory: 04-using-actions/react-app ao passo (como uma chave irmã de name e run).
+
+Faça o commit das alterações e envie o código (push).
+
+Dedique alguns momentos para inspecionar a saída da execução do workflow.
+
+Estender o Workflow para Executar os Testes Automatizados da Aplicação React:
+Adicione um novo passo após o passo Install Dependencies. Este novo passo deve ser nomeado Run Unit Tests e deve executar os testes automatizados rodando o comando npm run test dentro da pasta da aplicação React. Você pode tanto navegar (cd) para o diretório antes de executar o comando npm run test, ou pode passar o diretório de trabalho adicionando a opção working-directory: 04-using-actions/react-app ao passo (como uma chave irmã de name e run).
+
+Faça o commit das alterações e envie o código (push).
+
+Dedique alguns momentos para inspecionar a saída da execução do workflow.
+
+Finalizando:
+Altere os gatilhos do workflow para conter apenas workflow_dispatch para evitar que este workflow seja executado a cada push e polua a lista de execuções do workflow.
+
+---
