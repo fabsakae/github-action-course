@@ -8,4 +8,18 @@ jobs:
         steps:
           - name: Show OS 
             shell: bash 
-            run: echo "I'm running on bash."
+            run: echo "This job is running on an Ubuntu runner."
+    
+    windows-echo:
+        runs-on: windows-latest
+        steps:
+          - name: Show OS 
+            shell: bash 
+            run: echo "This job is running in a windows running."
+
+    macos-echo:
+        runs-on: macos-latest
+        steps:
+          - name: Show OS 
+            run: 
+              echo "This job is running in a MACOS running."
